@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EventTrigger : MonoBehaviour
 {
-    private GameObject _playerObject;
+    public GameObject _playerObject;
     public GameObject _transition;
     public Vector3 _destinyPos;
 
@@ -11,7 +11,7 @@ public class EventTrigger : MonoBehaviour
 
     private void Start()
     {
-        _playerObject = GameObject.FindWithTag("PlayerParent");
+        _playerObject = GameObject.FindWithTag("Player");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -22,7 +22,7 @@ public class EventTrigger : MonoBehaviour
     private IEnumerator CallEffect()
     {
         _transition.GetComponent<Animator>().SetTrigger("DoTransition");
-        yield return new WaitForSeconds(0.3f);
-        _playerObject.transform.position = _destinyPos;
+        yield return new WaitForSeconds(1f);
+        _playerObject.transform.localPosition = new Vector3(0, 0, 0);
     }
 }

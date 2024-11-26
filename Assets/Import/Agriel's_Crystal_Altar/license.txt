@@ -1,0 +1,11 @@
+Model Information:
+* title:	Agriel's Crystal Altar
+* source:	https://sketchfab.com/3d-models/agriels-crystal-altar-35aa801b657c4e869378f136c603041b
+* author:	DeonAden (https://sketchfab.com/DeonAden)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Agriel's Crystal Altar" (https://sketchfab.com/3d-models/agriels-crystal-altar-35aa801b657c4e869378f136c603041b) by DeonAden (https://sketchfab.com/DeonAden) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
