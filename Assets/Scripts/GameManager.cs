@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -23,5 +25,11 @@ public class GameManager : MonoBehaviour
     public void CollectCrystal()
     {
         crystalsCollected++;
+    }
+
+    public void ReloadGame()
+    {
+        Time.timeScale = 1f; // Retoma o jogo
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

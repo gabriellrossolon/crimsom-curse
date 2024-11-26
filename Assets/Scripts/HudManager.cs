@@ -8,6 +8,7 @@ public class HudManager : MonoBehaviour
 
     public Slider curseBar;
     public GameObject textWarn;
+    public GameObject gameOverUI;
 
     private void Awake()
     {
