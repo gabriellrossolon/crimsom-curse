@@ -8,6 +8,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource ambientSoundSource;
 
     public AudioClip gameOverSound;
+    public AudioClip jumpSound;
 
     private void Awake()
     {

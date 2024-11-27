@@ -34,8 +34,7 @@ public class EyeBehavior : MonoBehaviour
         if (IsPlayerInRange())
         {
             LookAtPlayer();
-            EmitRay();
-            UpdateCurseProgress();
+            if (_rayEmitter) { EmitRay(); }
         }
         else
         {
@@ -67,9 +66,11 @@ public class EyeBehavior : MonoBehaviour
         else
         {
             _lineRenderer.SetPosition(1, playerTargetPosition);
+            UpdateCurseProgress();
         }
 
-        _lineRenderer.SetPosition(0, transform.position);
+        _lineRenderer.SetPosition(0, transform.position);  
+
     }
 
     private void UpdateCurseProgress()
