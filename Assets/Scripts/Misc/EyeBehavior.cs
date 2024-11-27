@@ -7,6 +7,7 @@ public class EyeBehavior : MonoBehaviour
     private PlayerCurse _playerCurse;
 
     public bool _rayEmitter;
+    public bool _basicEye;
     [SerializeField] private float playerHeightOffset = 1.0f;
     [SerializeField] private LayerMask obstacleLayers;
     [SerializeField] private float activationDistance = 10f;
@@ -15,7 +16,10 @@ public class EyeBehavior : MonoBehaviour
 
     void Start()
     {
-        transform.rotation = Quaternion.Euler(0, Random.Range(0f, 360f), 0);
+        if (_basicEye)
+        {
+            transform.rotation = Quaternion.Euler(0, Random.Range(0f, 360f), 0);
+        }
 
         _playerTransform = GameObject.FindWithTag("Player").transform;
         _lineRenderer = GetComponent<LineRenderer>();

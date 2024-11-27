@@ -166,10 +166,15 @@ namespace StarterAssets
 			if (_input.move != Vector2.zero)
 			{
                 animator.SetBool("isWalk", true);
+				if (_input.sprint)
+				{
+					animator.SetBool("isRun", true);
+				}
             }
             else
 			{
 				animator.SetBool("isWalk", false);
+                animator.SetBool("isRun", false);
                 targetSpeed = 0.0f;
             }
 

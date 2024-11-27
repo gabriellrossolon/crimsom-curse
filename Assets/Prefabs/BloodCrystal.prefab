@@ -683,6 +683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bloodCrystal: 1
+  collectSound: {fileID: 8300000, guid: 6f582692ee4838d44b858d89e7a0f7ef, type: 3}
 --- !u!136 &6206379230547952656
 CapsuleCollider:
   m_ObjectHideFlags: 0

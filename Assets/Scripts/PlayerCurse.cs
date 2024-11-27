@@ -25,6 +25,8 @@ public class PlayerCurse : MonoBehaviour
         {
             curseValue = maxCurseValue;
             Debug.Log("Curse killed you");
+            SoundManager.Instance.ambientSoundSource.Stop();
+            SoundManager.Instance.eventsSoundSource.PlayOneShot(SoundManager.Instance.gameOverSound);
             HudManager.Instance.gameOverUI.SetActive(true);
             //Time.timeScale = 0f; // Pausa o jogo
         }

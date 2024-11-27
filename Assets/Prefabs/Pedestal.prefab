@@ -576,7 +576,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.19, y: 0.49, z: 0.2}
+  m_Size: {x: 0.28, y: 0.63, z: 0.29}
   m_Center: {x: 0, y: 0.24, z: -0.01}
 --- !u!114 &1763544636526908037
 MonoBehaviour:
@@ -590,7 +590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db2ba28da461b8d42b254f37f92747d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionSound: {fileID: 0}
+  interactionSound: {fileID: 8300000, guid: 2ca0a3b08ce42c24092c4cc0b3fbfc4f, type: 3}
   pedestal: 1
   crystal: {fileID: 2809535042101537215}
   activeDistance: 4

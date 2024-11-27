@@ -48,10 +48,11 @@ public class InteractableObject : MonoBehaviour
             if(GameManager.Instance.crystalsCollected >= 1)
             {
                 HudManager.Instance.textWarn.SetActive(false);
+                HudManager.Instance.RemoveCrystalImage();
                 crystal.SetActive(true);
                 GameManager.Instance.crystalsCollected--;
                 Destroy(this);
-                //SoundManager.Instance.eventsSoundSource.PlayOneShot(interactionSound);
+                SoundManager.Instance.eventsSoundSource.PlayOneShot(interactionSound);
             }
         }
     }

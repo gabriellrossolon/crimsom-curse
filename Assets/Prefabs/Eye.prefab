@@ -123,11 +123,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rayEmitter: 1
+  _basicEye: 1
   playerHeightOffset: 1
   obstacleLayers:
     serializedVersion: 2
     m_Bits: 64
   activationDistance: 20
+  curseIncreaseInterval: 1
 --- !u!120 &3167033645466118798
 LineRenderer:
   serializedVersion: 2

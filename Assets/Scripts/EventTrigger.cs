@@ -7,6 +7,8 @@ public class EventTrigger : MonoBehaviour
     public GameObject _transition;
     public Vector3 _destinyPos;
 
+    public AudioClip triggerSound;
+
     public bool _firstEncounter;
 
     private void Start()
@@ -22,6 +24,7 @@ public class EventTrigger : MonoBehaviour
     private IEnumerator CallEffect()
     {
         _transition.GetComponent<Animator>().SetTrigger("DoTransition");
+        SoundManager.Instance.eventsSoundSource.PlayOneShot(triggerSound);
         yield return new WaitForSeconds(1f);
         _playerObject.transform.localPosition = new Vector3(0, 0, 0);
     }
