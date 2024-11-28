@@ -75,6 +75,7 @@ namespace StarterAssets
 		private const float _threshold = 0.01f;
 
 		private Animator animator;
+		private bool isJumping;
 
 		private bool IsCurrentDeviceMouse
 		{
@@ -175,7 +176,8 @@ namespace StarterAssets
 				}
 				else
 				{
-					targetSpeed = MoveSpeed;
+                    animator.SetBool("isRun", false);
+                    targetSpeed = MoveSpeed;
 				}
 			}
 			else
@@ -235,22 +237,24 @@ namespace StarterAssets
 				}
 
 				// Jump
-				if (_input.jump && _jumpTimeoutDelta <= 0.0f)
+				if (_input.jump && _jumpTimeoutDelta <= 0.0f && !isJumping)
 				{
 					// the square root of H * -2 * G = how much velocity needed to reach desired height
 					animator.SetTrigger("isJump");
 					SoundManager.Instance.eventsSoundSource.PlayOneShot(SoundManager.Instance.jumpSound);
 					_verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
+					isJumping = true;
 				}
 
 				// jump timeout
 				if (_jumpTimeoutDelta >= 0.0f)
 				{
-					_jumpTimeoutDelta -= Time.deltaTime;
+					_jumpTimeoutDelta -= Time.deltaTime;		
 				}
 			}
 			else
 			{
+				isJumping = false;
 				// reset the jump timeout timer
 				_jumpTimeoutDelta = JumpTimeout;
 

@@ -9,7 +9,8 @@ public class MenuManager : MonoBehaviour
     public AudioClip btnHoverSound;
     public AudioClip clickSound;
 
-
+    public GameObject creditsScreen;
+    private bool creditsScreenOpened = false;
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
@@ -23,6 +24,12 @@ public class MenuManager : MonoBehaviour
             Instance = this;
         }
     }
+
+    private void Update()
+    {
+        
+    }
+
     public void ChangeToSampleScene()
     {
         eventsSoundSource.PlayOneShot(clickSound);
@@ -35,5 +42,11 @@ public class MenuManager : MonoBehaviour
     {
         eventsSoundSource.PlayOneShot(clickSound);
         Application.Quit();
+    }
+
+    public void CallCreditsScreen()
+    {
+        creditsScreenOpened = !creditsScreenOpened;
+        creditsScreen.SetActive(creditsScreenOpened);
     }
 }
