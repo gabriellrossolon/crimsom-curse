@@ -14,7 +14,7 @@ public class TerrainBehavior : MonoBehaviour
             // Verifica se o tempo passou o intervalo para aumentar a maldição
             if (_timeSinceLastCurse >= _curseIncreaseInterval)
             {
-                other.gameObject.GetComponentInChildren<PlayerCurse>().ImproveCurse();
+                other.gameObject.GetComponentInChildren<PlayerCurse>().ImproveCurse(1f);
                 _timeSinceLastCurse = 0f; // Reseta o temporizador
             }
         }

@@ -8,11 +8,20 @@ public class EyeBehavior : MonoBehaviour
 
     public bool _rayEmitter;
     public bool _basicEye;
+    public bool _bossEye;
     [SerializeField] private float playerHeightOffset = 1.0f;
     [SerializeField] private LayerMask obstacleLayers;
     [SerializeField] private float activationDistance = 10f;
     [SerializeField] private float curseIncreaseInterval = 1f;
     private float _timeLookingAtPlayer = 0f;
+
+
+    public GameObject laserPrefab;
+    public float fireInterval = 5f;
+    public float laserSpeed = 20f;
+    private float fireTimer;
+    public AudioClip fireClip;
+    public AudioSource bossSounds;
 
     void Start()
     {
@@ -20,6 +29,8 @@ public class EyeBehavior : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, Random.Range(0f, 360f), 0);
         }
+
+        if (_bossEye) {bossSounds = GetComponent<AudioSource>(); }
 
         _playerTransform = GameObject.FindWithTag("Player").transform;
         _lineRenderer = GetComponent<LineRenderer>();
@@ -40,6 +51,16 @@ public class EyeBehavior : MonoBehaviour
         {
             ResetRay();
             ResetCurseTimer();
+        }
+
+        if (_bossEye && IsPlayerInRange())
+        {
+            fireTimer += Time.deltaTime;
+            if (fireTimer >= fireInterval)
+            {
+                fireTimer = 0f;
+                FireLaser();
+            }
         }
     }
 
@@ -79,7 +100,7 @@ public class EyeBehavior : MonoBehaviour
 
         if (_timeLookingAtPlayer >= curseIncreaseInterval)
         {
-            _playerCurse.ImproveCurse();
+            _playerCurse.ImproveCurse(1f);
             _timeLookingAtPlayer -= curseIncreaseInterval;
         }
     }
@@ -92,6 +113,17 @@ public class EyeBehavior : MonoBehaviour
     private void ResetCurseTimer()
     {
         _timeLookingAtPlayer = 0f;
+    }
+
+
+
+    void FireLaser()
+    {
+        bossSounds.PlayOneShot(fireClip);
+        Vector3 targetPosition = _playerTransform.position + new Vector3(0, 1f, 0); // Adiciona +2f no Y
+        GameObject laser = Instantiate(laserPrefab, transform.position, Quaternion.identity);
+        Vector3 direction = (targetPosition - transform.position).normalized;
+        laser.GetComponent<ProjectileBehavior>().Initialize(direction, laserSpeed);
     }
 }
 

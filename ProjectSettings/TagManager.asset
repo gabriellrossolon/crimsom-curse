@@ -7,6 +7,8 @@ TagManager:
   - FxTemporaire
   - CinemachineTarget
   - Eye
+  - Obstacle
+  - PulseCrystal
   layers:
   - Default
   - TransparentFX

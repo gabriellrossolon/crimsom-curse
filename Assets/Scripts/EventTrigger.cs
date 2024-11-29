@@ -10,6 +10,10 @@ public class EventTrigger : MonoBehaviour
     public AudioClip triggerSound;
 
     public bool _firstEncounter;
+    public bool _lastEncounter;
+    public bool _winTrigg;
+
+    public GameObject giantEye;
 
     private void Start()
     {
@@ -18,7 +22,7 @@ public class EventTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (_firstEncounter) { StartCoroutine(CallEffect()); }
+        { StartCoroutine(CallEffect()); }
     }
 
     private IEnumerator CallEffect()
@@ -26,6 +30,18 @@ public class EventTrigger : MonoBehaviour
         _transition.GetComponent<Animator>().SetTrigger("DoTransition");
         SoundManager.Instance.eventsSoundSource.PlayOneShot(triggerSound);
         yield return new WaitForSeconds(1f);
-        _playerObject.transform.localPosition = new Vector3(0, 0, 0);
+        if (_lastEncounter) { Destroy(giantEye); }
+        if (_firstEncounter) { Teleport(); }
+        if (_winTrigg) { WinGame(); }
+    }
+
+    private void Teleport()
+    {
+        _playerObject.transform.localPosition = _destinyPos;
+    }
+
+    private void WinGame()
+    {
+        HudManager.Instance.winUI.SetActive(true);
     }
 }

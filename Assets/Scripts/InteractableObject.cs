@@ -50,6 +50,7 @@ public class InteractableObject : MonoBehaviour
                 HudManager.Instance.textWarn.SetActive(false);
                 HudManager.Instance.RemoveCrystalImage();
                 crystal.SetActive(true);
+                GameManager.Instance.InsertCrystal();
                 GameManager.Instance.crystalsCollected--;
                 Destroy(this);
                 SoundManager.Instance.eventsSoundSource.PlayOneShot(interactionSound);

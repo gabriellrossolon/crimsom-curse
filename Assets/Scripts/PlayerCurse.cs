@@ -12,9 +12,9 @@ public class PlayerCurse : MonoBehaviour
         HudManager.Instance.curseBar.maxValue = maxCurseValue;
     }
 
-    public void ImproveCurse()
+    public void ImproveCurse(float value)
     {
-        curseValue += 1f;
+        curseValue += value;
         curseValue = Mathf.Clamp(curseValue, 0f, maxCurseValue);
         CurseDeath();
     }

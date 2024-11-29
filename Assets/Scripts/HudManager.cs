@@ -9,6 +9,7 @@ public class HudManager : MonoBehaviour
     public Slider curseBar;
     public GameObject textWarn;
     public GameObject gameOverUI;
+    public GameObject winUI;
 
     public List<Image> crystalImages;
     private int currentIndex = 0;
