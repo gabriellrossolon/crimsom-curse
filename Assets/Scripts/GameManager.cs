@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject winPortal;
     public GameObject firstTrigger;
+    public GameObject teleportBossRoom;
     public GameObject obstHandLeft;
     public GameObject obstHandRight;
 
@@ -76,6 +77,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        Time.timeScale = 1f;
     }
 
     public void PauseControl()
@@ -107,6 +109,7 @@ public class GameManager : MonoBehaviour
             SoundManager.Instance.ambientSoundSource.Play();
             SoundManager.Instance.eventsSoundSource.PlayOneShot(SoundManager.Instance.explosionSound);
             boss.SetActive(false);
+            teleportBossRoom.GetComponent<EventTrigger>().enabled = false;
             winCrystal.SetActive(true);
             explosion.SetActive(true);
         }
