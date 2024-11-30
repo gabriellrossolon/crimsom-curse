@@ -80,9 +80,18 @@ public class EyeBehavior : MonoBehaviour
         Vector3 playerTargetPosition = _playerTransform.position + Vector3.up * playerHeightOffset;
         Vector3 direction = (playerTargetPosition - transform.position).normalized;
 
-        if (Physics.Raycast(transform.position, direction, out RaycastHit hit, Mathf.Infinity, obstacleLayers))
+        if (Physics.Raycast(transform.position, direction, out RaycastHit hit, Mathf.Infinity))
         {
-            _lineRenderer.SetPosition(1, hit.point);
+            if (hit.collider.CompareTag("Player"))
+            {
+                _lineRenderer.SetPosition(1, playerTargetPosition);
+                UpdateCurseProgress();
+            }
+            else if (((1 << hit.collider.gameObject.layer) & obstacleLayers) != 0) // Verifica se está nas obstacleLayers
+            {
+                _lineRenderer.SetPosition(1, hit.point);
+                Debug.Log("colidindo com parede");
+            }
         }
         else
         {
@@ -90,7 +99,8 @@ public class EyeBehavior : MonoBehaviour
             UpdateCurseProgress();
         }
 
-        _lineRenderer.SetPosition(0, transform.position);  
+        // Atualiza a posição inicial da linha
+        _lineRenderer.SetPosition(0, transform.position);
 
     }
 
@@ -114,8 +124,6 @@ public class EyeBehavior : MonoBehaviour
     {
         _timeLookingAtPlayer = 0f;
     }
-
-
 
     void FireLaser()
     {

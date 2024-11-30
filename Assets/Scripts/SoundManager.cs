@@ -13,6 +13,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip ambientSound;
     public AudioClip explosionSound;
     public AudioClip magicSound;
+    public AudioClip btnHoverSound;
 
     private void Awake()
     {

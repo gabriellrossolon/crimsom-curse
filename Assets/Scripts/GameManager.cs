@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     public GameObject winCrystal;
     public GameObject explosion;
 
+    private bool pausedGame;
+
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
@@ -35,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape)){ PauseControl(); }
     }
     public void CollectCrystal()
     {
@@ -65,6 +67,35 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f; // Retoma o jogo
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    public void PauseControl()
+    {
+        pausedGame = !pausedGame;
+
+        if (pausedGame)
+        {
+            Time.timeScale = 0f;
+            HudManager.Instance.pauseUI.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else if (!pausedGame)
+        {
+            Time.timeScale = 1f;
+            HudManager.Instance.pauseUI.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
     }
 
     public void BossDamage()

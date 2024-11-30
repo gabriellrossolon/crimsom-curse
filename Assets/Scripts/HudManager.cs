@@ -10,6 +10,7 @@ public class HudManager : MonoBehaviour
     public GameObject textWarn;
     public GameObject gameOverUI;
     public GameObject winUI;
+    public GameObject pauseUI;
 
     public List<Image> crystalImages;
     private int currentIndex = 0;

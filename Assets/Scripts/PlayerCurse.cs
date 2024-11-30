@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,6 +6,7 @@ public class PlayerCurse : MonoBehaviour
 {
     public float curseValue = 0;
     public float maxCurseValue = 100;
+    private bool cursed = false;
 
     private void Update()
     {
@@ -16,19 +18,23 @@ public class PlayerCurse : MonoBehaviour
     {
         curseValue += value;
         curseValue = Mathf.Clamp(curseValue, 0f, maxCurseValue);
-        CurseDeath();
+        StartCoroutine(CurseDeath());
     }
 
-    private void CurseDeath()
+    private IEnumerator CurseDeath()
     {
-        if(curseValue >= maxCurseValue)
+        if(curseValue >= maxCurseValue && !cursed)
         {
             curseValue = maxCurseValue;
             Debug.Log("Curse killed you");
             SoundManager.Instance.ambientSoundSource.Stop();
             SoundManager.Instance.eventsSoundSource.PlayOneShot(SoundManager.Instance.gameOverSound);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             HudManager.Instance.gameOverUI.SetActive(true);
-            //Time.timeScale = 0f; // Pausa o jogo
+            cursed = true;
+            yield return new WaitForSeconds(1f);
+            Time.timeScale = 0f; // Pausa o jogo
         }
     }
 }

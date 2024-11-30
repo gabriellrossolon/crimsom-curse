@@ -945,7 +945,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &582012217
 RectTransform:
   m_ObjectHideFlags: 0
@@ -961,9 +961,9 @@ RectTransform:
   - {fileID: 896502903}
   m_Father: {fileID: 724937026}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 460.27, y: -209.24596}
   m_SizeDelta: {x: 515.7475, y: 121.8041}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &582012218
@@ -991,7 +991,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.122641504, g: 0.113964036, b: 0.113964036, a: 1}
     m_PressedColor: {r: 0.12156863, g: 0.11372549, b: 0.11372549, a: 1}
     m_SelectedColor: {r: 0.12156863, g: 0.11372549, b: 0.11372549, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.254717, g: 0.254717, b: 0.254717, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1012,7 +1012,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1376996169}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: ChangeToSampleScene
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

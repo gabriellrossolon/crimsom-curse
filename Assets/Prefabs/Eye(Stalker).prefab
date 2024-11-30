@@ -43,7 +43,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3140639194128502264}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 2f29beeb565d0674382b0c58e94d30ee, type: 2}
   m_CullingMode: 0
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detectionRange: 5
   wanderRadius: 5
-  distanceFromPlayer: 1
+  distanceFromPlayer: 3
 --- !u!1 &4617280996632273967
 GameObject:
   m_ObjectHideFlags: 0

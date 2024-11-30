@@ -42,7 +42,7 @@ public class EventTrigger : MonoBehaviour
         if (_lastEncounter) { Destroy(giantEye); }
         if (_firstEncounter) { Teleport(); }
         if (_winTrigg) { WinGame(); }
-        yield return new WaitForSeconds(1.1f);
+        yield return new WaitForSeconds(1f);
         
         _playerObject.GetComponent<FirstPersonController>().enabled = true;
     }

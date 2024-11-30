@@ -32,10 +32,10 @@ public class MenuManager : MonoBehaviour
 
     public void ChangeToSampleScene()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         eventsSoundSource.PlayOneShot(clickSound);
         SceneManager.LoadScene("SampleScene");
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = false;
     }
 
     public void QuitGame()
