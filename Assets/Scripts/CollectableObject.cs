@@ -1,3 +1,4 @@
+using StarterAssets;
 using System.Collections;
 using UnityEngine;
 
@@ -32,8 +33,15 @@ public class CollectableObject : MonoBehaviour
 
     private IEnumerator BackToSpawn(Collider other)
     {
-        yield return new WaitForSeconds(1f);
-        other.transform.localPosition = new Vector3(0, 0, 0);
-        Destroy(this.gameObject);
+        if (other.CompareTag("Player"))
+        {
+            yield return new WaitForSeconds(0.4f);
+            other.GetComponent<FirstPersonController>().enabled = false;
+            yield return new WaitForSeconds(0.8f);
+            other.transform.localPosition = new Vector3(0, 0, 0);
+            yield return new WaitForSeconds(1.2f);
+            other.GetComponent<FirstPersonController>().enabled = true;
+            //Destroy(this.gameObject);
+        }
     }
 }

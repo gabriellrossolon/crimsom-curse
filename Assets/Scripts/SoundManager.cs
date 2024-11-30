@@ -9,6 +9,10 @@ public class SoundManager : MonoBehaviour
 
     public AudioClip gameOverSound;
     public AudioClip jumpSound;
+    public AudioClip bossMusic;
+    public AudioClip ambientSound;
+    public AudioClip explosionSound;
+    public AudioClip magicSound;
 
     private void Awake()
     {

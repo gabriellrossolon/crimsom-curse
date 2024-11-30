@@ -306,7 +306,7 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 200
+  m_Intensity: 0.1
   m_Range: 1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -640,7 +640,7 @@ MonoBehaviour:
   interactionSound: {fileID: 8300000, guid: 2ca0a3b08ce42c24092c4cc0b3fbfc4f, type: 3}
   pedestal: 1
   crystal: {fileID: 254659874053853187}
-  activeDistance: 2
+  activeDistance: 3
 --- !u!1 &2554840045273503818
 GameObject:
   m_ObjectHideFlags: 0

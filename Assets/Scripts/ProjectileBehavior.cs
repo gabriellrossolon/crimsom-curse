@@ -24,7 +24,7 @@ public class ProjectileBehavior : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            other.GetComponentInChildren<PlayerCurse>().ImproveCurse(20f);
+            other.GetComponentInChildren<PlayerCurse>().ImproveCurse(15f);
         }
         else if (other.gameObject.CompareTag("Obstacle"))
         {

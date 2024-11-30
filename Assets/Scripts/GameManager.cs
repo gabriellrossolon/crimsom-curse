@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public float bossDamage;
     public GameObject boss;
     public GameObject winCrystal;
+    public GameObject explosion;
 
     private void Awake()
     {
@@ -56,6 +57,7 @@ public class GameManager : MonoBehaviour
         {
             firstTrigger.SetActive(false);
             winPortal.SetActive(true);
+            SoundManager.Instance.eventsSoundSource.PlayOneShot(SoundManager.Instance.magicSound);
         }
     }
 
@@ -68,10 +70,14 @@ public class GameManager : MonoBehaviour
     public void BossDamage()
     {
         bossDamage++;
-        if (bossDamage >= 3)
+        if (bossDamage >= 5)
         {
+            SoundManager.Instance.ambientSoundSource.clip = SoundManager.Instance.ambientSound;
+            SoundManager.Instance.ambientSoundSource.Play();
+            SoundManager.Instance.eventsSoundSource.PlayOneShot(SoundManager.Instance.explosionSound);
             boss.SetActive(false);
             winCrystal.SetActive(true);
+            explosion.SetActive(true);
         }
     }
 }

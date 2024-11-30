@@ -1,3 +1,4 @@
+using StarterAssets;
 using System.Collections;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ public class EventTrigger : MonoBehaviour
 
     public bool _firstEncounter;
     public bool _lastEncounter;
+    public bool _bossTrig;
     public bool _winTrigg;
 
     public GameObject giantEye;
@@ -29,10 +31,20 @@ public class EventTrigger : MonoBehaviour
     {
         _transition.GetComponent<Animator>().SetTrigger("DoTransition");
         SoundManager.Instance.eventsSoundSource.PlayOneShot(triggerSound);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.4f);
+        _playerObject.GetComponent<FirstPersonController>().enabled = false;
+        yield return new WaitForSeconds(0.8f);
+        if (_bossTrig)
+        {
+            SoundManager.Instance.ambientSoundSource.clip = SoundManager.Instance.bossMusic;
+            SoundManager.Instance.ambientSoundSource.Play();
+        }
         if (_lastEncounter) { Destroy(giantEye); }
         if (_firstEncounter) { Teleport(); }
         if (_winTrigg) { WinGame(); }
+        yield return new WaitForSeconds(1.1f);
+        
+        _playerObject.GetComponent<FirstPersonController>().enabled = true;
     }
 
     private void Teleport()
