@@ -124,6 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5f0ad5c9ce2c0249a1fa512b31d3cc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactSfx: {fileID: 8300000, guid: e9cf105c46cd4f24e9624f200b7293a7, type: 3}
+  glassImpact: {fileID: 8300000, guid: 2524edabe7c8f4a4c95e5b9459c0261a, type: 3}
 --- !u!54 &4134848842666986495
 Rigidbody:
   m_ObjectHideFlags: 0

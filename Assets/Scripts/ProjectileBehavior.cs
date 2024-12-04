@@ -4,6 +4,9 @@ public class ProjectileBehavior : MonoBehaviour
 {
     private Vector3 moveDirection;
     private float moveSpeed;
+    public AudioClip impactSfx;
+    public AudioClip glassImpact;
+    public float damage = 10f;
 
     private void Start()
     {
@@ -24,7 +27,8 @@ public class ProjectileBehavior : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            other.GetComponentInChildren<PlayerCurse>().ImproveCurse(15f);
+            other.GetComponentInChildren<PlayerCurse>().ImproveCurse(damage);
+            SoundManager.Instance.eventsSoundSource.PlayOneShot(impactSfx);
         }
         else if (other.gameObject.CompareTag("Obstacle"))
         {
@@ -32,6 +36,7 @@ public class ProjectileBehavior : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("PulseCrystal"))
         {
+            SoundManager.Instance.eventsSoundSource.PlayOneShot(glassImpact);
             other.GetComponent<LineRenderer>().enabled = true;
             other.transform.Find("ChargedCrystal").gameObject.SetActive(true);
             other.transform.Find("NormalCrystal").gameObject.SetActive(false);

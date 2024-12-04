@@ -6,6 +6,7 @@ public class SoundManager : MonoBehaviour
 
     public AudioSource eventsSoundSource;
     public AudioSource ambientSoundSource;
+    public AudioSource cursingSoundSource;
 
     public AudioClip gameOverSound;
     public AudioClip jumpSound;
@@ -14,6 +15,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip explosionSound;
     public AudioClip magicSound;
     public AudioClip btnHoverSound;
+    public AudioClip cursingSound;
 
     private void Awake()
     {

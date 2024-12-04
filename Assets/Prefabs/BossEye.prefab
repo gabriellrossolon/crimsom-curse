@@ -135,7 +135,7 @@ MonoBehaviour:
   curseIncreaseInterval: 0.5
   laserPrefab: {fileID: 3363273124486939607, guid: 727fc01f50dc93243b92f1140c43fd7c, type: 3}
   fireInterval: 2
-  laserSpeed: 75
+  laserSpeed: 100
   fireClip: {fileID: 8300000, guid: e18675cfab40ead4298a6fdf329df21c, type: 3}
   bossSounds: {fileID: 0}
 --- !u!120 &6136056021469058349

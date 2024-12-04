@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
         {
             firstTrigger.SetActive(false);
             winPortal.SetActive(true);
-            SoundManager.Instance.eventsSoundSource.PlayOneShot(SoundManager.Instance.magicSound);
+            //SoundManager.Instance.eventsSoundSource.PlayOneShot(SoundManager.Instance.magicSound);
         }
     }
 
@@ -106,6 +106,7 @@ public class GameManager : MonoBehaviour
         if (bossDamage >= 5)
         {
             SoundManager.Instance.ambientSoundSource.clip = SoundManager.Instance.ambientSound;
+            SoundManager.Instance.ambientSoundSource.volume = 1f;
             SoundManager.Instance.ambientSoundSource.Play();
             SoundManager.Instance.eventsSoundSource.PlayOneShot(SoundManager.Instance.explosionSound);
             boss.SetActive(false);

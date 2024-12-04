@@ -14,6 +14,7 @@ public class HudManager : MonoBehaviour
 
     public List<Image> crystalImages;
     private int currentIndex = 0;
+    private int currentIndexTwo = 0;
 
     private void Awake()
     {
@@ -42,8 +43,10 @@ public class HudManager : MonoBehaviour
     {
         if (crystalImages.Count > 0)
         {
-            Destroy(crystalImages[0].gameObject);
-            crystalImages.RemoveAt(0);
+            //Destroy(crystalImages[0].gameObject);
+            crystalImages[currentIndexTwo].gameObject.SetActive(false);
+            currentIndexTwo++;
+            //crystalImages.RemoveAt(0);
         }
     }
 }

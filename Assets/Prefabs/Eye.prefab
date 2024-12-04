@@ -124,12 +124,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rayEmitter: 1
   _basicEye: 1
+  _bossEye: 0
   playerHeightOffset: 1
   obstacleLayers:
     serializedVersion: 2
     m_Bits: 64
   activationDistance: 15
   curseIncreaseInterval: 0.5
+  laserPrefab: {fileID: 0}
+  fireInterval: 5
+  laserSpeed: 20
+  fireClip: {fileID: 0}
+  bossSounds: {fileID: 0}
 --- !u!120 &3167033645466118798
 LineRenderer:
   serializedVersion: 2

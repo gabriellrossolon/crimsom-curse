@@ -1,0 +1,11 @@
+Model Information:
+* title:	Stone Pillar
+* source:	https://sketchfab.com/3d-models/stone-pillar-ae5a63ed67d94712af7bb42bced3655b
+* author:	saltyshiro (https://sketchfab.com/saltyshiro)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Stone Pillar" (https://sketchfab.com/3d-models/stone-pillar-ae5a63ed67d94712af7bb42bced3655b) by saltyshiro (https://sketchfab.com/saltyshiro) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

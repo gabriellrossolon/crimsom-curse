@@ -37,6 +37,7 @@ public class EventTrigger : MonoBehaviour
         if (_bossTrig)
         {
             SoundManager.Instance.ambientSoundSource.clip = SoundManager.Instance.bossMusic;
+            SoundManager.Instance.ambientSoundSource.volume = 0.7f;
             SoundManager.Instance.ambientSoundSource.Play();
         }
         if (_lastEncounter) { Destroy(giantEye); }
