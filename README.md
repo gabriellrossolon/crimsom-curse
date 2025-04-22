@@ -38,8 +38,8 @@ Foi desenvolvido com **Unity** utilizando **C#**, com foco em mecânicas de joga
 
 ## 🚀 Como jogar
 
-1. Faça o **download do jogo** através do link abaixo (se disponível)  
-2. Descompacte o arquivo e execute o **arquivo .exe** (ou equivalente para a plataforma escolhida)  
+1. Faça o **download do jogo** através do link abaixo
+2. Descompacte o arquivo e execute o **arquivo .exe**
 3. Siga as instruções de como jogar na página do Link
 
 ---
