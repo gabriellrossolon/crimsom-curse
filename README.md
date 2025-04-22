@@ -32,7 +32,7 @@ Foi desenvolvido com **Unity** utilizando **C#**, com foco em mecânicas de joga
 ---
 
 ## 📷 Preview
-![Uploading f48pv3.png…]()
+![f48pv3](https://github.com/user-attachments/assets/4468de19-55f9-4a41-b387-c161bbb52566)
 
 ---
 
