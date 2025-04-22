@@ -23,7 +23,7 @@ Foi desenvolvido com **Unity** utilizando **C#**, com foco em mecânicas de joga
 
 ## ✨ Funcionalidades
 
-- **Modo de combate** com ataques rápidos e estratégicos  
+- **Formação de Estratégias** para conclusão dos desafios do jogo  
 - **Exploração** de ambientes sombrios e atmosféricos  
 - **Desafios progressivos** que aumentam a dificuldade à medida que o jogo avança  
 - **História curta e envolvente** que explora o tema da maldição  
